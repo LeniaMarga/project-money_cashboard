@@ -1,0 +1,10 @@
+
+<% sum = 0 %>
+<% @categories.each do |category| %>
+<% sum += transaction.price() %>
+
+<% end %>
+  <div class="transaction-list">
+    <p>Category: <%= category.tag_name %> , sum limit: <%= category.amount_limit %></p>
+
+  </div>
