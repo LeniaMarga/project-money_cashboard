@@ -133,19 +133,12 @@ class Transaction
       return total["sum"]
     end
 
-    def self.total_per_date(date_input)
+    def self.search_per_date(date_input)
       sql = "SELECT SUM(price) FROM transactions WHERE date_input = $1"
-      values = [date_input]
+      values = ["%#{date_input }%"]
       sum = SqlRunner.run(sql, values)
       total = sum.first
       return total["sum"]
-    end
-
-    def reduce_budget()
-      if @price <= wallet.budget
-         wallet.budget -= @price
-      end
-      return wallet.budget
     end
 
 end

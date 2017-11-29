@@ -1,8 +1,13 @@
 
 <div class="introduction">
-  <h1></h1>
-  <%@budget = 0%>
-<p>Sum per category:</p>
-
-<%@budget += @category.total_sum.to_i%>
-<p>  <%=@category.tag_name %> : <%= @budget%> </p>
+<h1></h1>
+<%@budget = 0%>
+<h3>category <%=@category.tag_name %></h3>
+<%@budget += @category.total_sum%>
+<h3> total expenses: <%= @budget%>£ </h3>
+<hr>
+ <% @transactions.each do |transaction| %>
+  <% if transaction.category.tag_name == @category.tag_name %>
+  <%= transaction.print_tag %>
+  <%end%>
+<%end%>

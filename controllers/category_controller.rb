@@ -12,5 +12,6 @@ get '/categories' do # index
 end
 
 
+
 # binding.pry
 # nil

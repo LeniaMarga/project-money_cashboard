@@ -1,8 +1,0 @@
-
-<div class="introduction">
-  <h1></h1>
-  <%@budget = 0%>
-<p>Sum per category:</p>
-
-<%@budget += @category.total_sum.to_i%>
-<p>  <%=@category.tag_name %> : <%= @budget%> </p>

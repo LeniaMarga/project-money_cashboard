@@ -1,15 +1,23 @@
 <div class="introduction">
   <h1>my money cashboard</h1>
   <br>
-  <h3>my sum: <%= @sum %></h3>
+  <h3>my expenses: <%= @sum %></h3>
+  <hr>
   <h3>my budget: <%= @@budget %></h3>
   <p><% if @sum >= @@budget %>
      <p class ="red"> note! you are over budget!</p>
      <%end%>
   <br>
-  <a class="button big-button" href="/transactions/new">New Transaction</a>
-  <a class="button big-button" href="/transactions">All Transactions</a>
-  <a class="button big-button2" href="/transactions/new">New Transaction</a>
-  <a class="button big-button2" href="/transactions">All Transactions</a>
-  <div class="clear"></div>
+  <ul>
+    <li>
+      <a class="button big-button" href="/transactions/new">New Transaction</a>
+    </li>
+    <li>
+      <a class="button big-button" href="/transactions">All Transactions</a>
+    </li>
+    <li>
+      <!-- <a class="button2 big-button" href="/categories">All Categories</a> -->
+    </li>
+    <div class="clear"></div>
+  </ul>
 </div>

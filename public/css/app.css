@@ -144,15 +144,37 @@ form .box {
   margin: 0 auto;
 }
 
+flex-outer > li > label,
+.flex-outer li p {
+  flex: 1 0 120px;
+  max-width: 220px;
+}
+
+body {
+  background: #fff;
+}
 
 
+/* start flexing */
+.flex-outer li,
+.flex-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+
+.flex-outer > li > label + *,
+.flex-inner {
+  flex: 1 0 220px;
+}
 
 form .field-group{
   display: flex;
   margin: 0 0 12px 0;
 }
 
-form .field-group .label{
+form .flex-outer .label{
   flex: 1;
   text-align: right;
   margin: 0 8px 0 0;
@@ -305,9 +327,39 @@ The buttons
   display: block;
 }
 
+.button2 {
+  width: 9.688rem;
+  background-color: #478B73;
+  border-color: #478B73;
+  text-shadow:none;
+  text-align: center;
+  border-style: none;
+  border-radius: 4px;
+  padding: 1rem 1.5rem;
+  color: white;
+  font-size: 1.125rem;
+  display: block;
+}
+
+.button3 {
+  width: 9.688rem;
+  height: 2.50rem;
+  background-color: #EEEEEE;
+  border-color: #EEEEEE;
+  text-shadow: none;
+  text-align: top;
+  line-height: 2.50rem;
+  border-style: none;
+  border-radius: 4px;
+  color: black;
+  font-size: 0.8rem;
+  display: block;
+  align-items: left;
+}
+
 .button:hover{
-  background-color: #e75480;
-  border-color: #e75480;
+  background-color: #AE2305;
+  border-color: #AE2305;
   cursor: pointer;
 }
 

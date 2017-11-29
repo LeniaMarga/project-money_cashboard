@@ -2,6 +2,8 @@
 <div class="introduction">
   <h1></h1>
   <%@budget = 0%>
-<p>Sum per shop:</p>
+<h3>Sum per shop </h3>
+<br>
+<h3><%=@shop.shop_name %>,
 <%@budget += @shop.total_shop_sum.to_i%>
-<p>  <%=@shop.shop_name %> : <%= @budget%> </p>
+<%= @budget%> £</h3>

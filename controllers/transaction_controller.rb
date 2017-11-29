@@ -51,6 +51,7 @@ end
 
 get '/transactions/category/:id' do # show  ---it calls the delete
   @category = Category.find(params[:id])
+  @transactions = Transaction.all
   erb( :"transactions/category" )
 end
 
@@ -59,12 +60,7 @@ get '/transactions/shop/:id' do # show  ---it calls the delete
   erb( :"transactions/shop" )
 end
 
-# get '/transactions/budget' do # show  ---it calls the delete
-#   @transaction = Transaction.all
-#   @category =  Category.find( params[:id] )
-#   @sum = Transaction.total_per_category(@category.id)
-#   erb( :"transactions/budget" )
-# end
+
 
 #
 #
