@@ -52,7 +52,12 @@ class Category
     return result
   end
 
-  def self.total_sum
+  def self.delete()
+    sql = "DELETE FROM categories"
+    SqlRunner.run( sql )
+  end
+
+  def total_sum
     sql = "SELECT SUM(price) FROM transactions WHERE transactions.category_id = $1"
     values = [@id]
     sum = SqlRunner.run( sql, values )

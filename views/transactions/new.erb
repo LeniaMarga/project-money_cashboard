@@ -44,13 +44,11 @@
   </li>
   <li>
     <label for="shop-name-field" class="label">Shop:</label>
-      <input
-        type="text"
-        name="shop_name"
-        id="shop-name-field"
-        placeholder="shop name"
-        required
-      />
+    <select name="shop_id" id="shop_selection">
+      <% @shops.each do |shop| %>
+      <option value= <%=shop.id%>> <%=shop.shop_name%></option>
+      <% end %>
+    </select>
    </li>
    <li>
   <button class="big-button button">Save</button>

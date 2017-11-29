@@ -15,7 +15,7 @@ end
 
 get '/transactions/new' do # new  ----it calls the post (create)
   @categories = Category.all
-  @shop = Shop.all
+  @shops = Shop.all
   erb( :"transactions/new" )
 end
 
@@ -33,7 +33,7 @@ end
 get '/transactions/:id/edit' do # edit  calls the put(update)
   @transaction = Transaction.find( params[:id] )
   @categories = Category.all
-  @shop = Shop.all
+  @shops = Shop.all
   erb( :"transactions/edit" )
 end
 
@@ -49,25 +49,22 @@ delete '/transactions/:id' do # delete
   # redirect to '/transactions'
 end
 
-get '/transactions/:category' do # show  ---it calls the delete
-  @transaction = Transaction.all
-  @category =  @transaction.category(params[:id])
-  erb( :"transactions/category" )
-end
-
 get '/transactions/category/:id' do # show  ---it calls the delete
-  @transaction = Transaction.all
-  @category =  Category.find( params[:id] )
-  @sum = Transaction.total_per_category(@category.id)
-  erb( :"transactions/category/id" )
-end
-
-get '/transactions/budget' do # show  ---it calls the delete
-  @transaction = Transaction.all
-  @category =  Category.find( params[:id] )
-  @sum = Transaction.total_per_category(@category.id)
+  @category = Category.find(params[:id])
   erb( :"transactions/category" )
 end
+
+get '/transactions/shop/:id' do # show  ---it calls the delete
+  @shop= Shop.find(params[:id])
+  erb( :"transactions/shop" )
+end
+
+# get '/transactions/budget' do # show  ---it calls the delete
+#   @transaction = Transaction.all
+#   @category =  Category.find( params[:id] )
+#   @sum = Transaction.total_per_category(@category.id)
+#   erb( :"transactions/budget" )
+# end
 
 #
 #

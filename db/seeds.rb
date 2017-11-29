@@ -4,6 +4,9 @@ require_relative('../models/category.rb')
 require_relative('../models/transaction.rb')
 require_relative('../models/shop.rb')
 
+Transaction.delete
+Shop.delete
+Category.delete
 
 food_drinks = Category.new({'tag_name' => 'food_drinks', 'amount_limit' => '200.00'})
 food_drinks.save

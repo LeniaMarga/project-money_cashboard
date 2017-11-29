@@ -2,8 +2,9 @@
 <h1></h1>
 <% @categories.each do |category| %>
   <div class="transaction-list">
-    <p>Category: <%= category.tag_name %> , sum: <%= @sum %>, limit: <%= category.amount_limit %></p>
-    <a class="body-link" href="/categories/<%= category.id %>">Edit</a>
+    <h3> <%= category.tag_name %> , sum: <%= category.total_sum %></h3><p> limit: <%= category.amount_limit %></p>
+    <!-- <a class="body-link" href="/categories/budget">Edit</a> -->
+    <br>
   </div>
 <% end %>
 </div>

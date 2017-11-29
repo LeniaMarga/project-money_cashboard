@@ -47,11 +47,9 @@ class Shop
       SqlRunner.run( sql, values )
     end
 
-    def delete()
-      sql = "DELETE FROM shops
-      WHERE id = $1"
-      values = [@id]
-      SqlRunner.run( sql, values )
+    def self.delete()
+      sql = "DELETE FROM shops"
+      SqlRunner.run( sql)
     end
 
   def self.all
@@ -75,8 +73,16 @@ class Shop
     WHERE id = $1"
     values = [id]
     shop = SqlRunner.run( sql, values )
-    result = Transaction.new( shop.first )
+    result = Shop.new( shop.first )
     return result
+  end
+
+  def total_shop_sum
+    sql = "SELECT SUM(price) FROM transactions WHERE transactions.shop_id = $1"
+    values = [@id]
+    sum = SqlRunner.run( sql, values )
+    result = sum.first
+    return result["sum"]
   end
 
   def self.map_items(shop_data)

@@ -52,15 +52,14 @@
   <div class="field-group">
     <label for="shop-name-field" class="label">Shop:</label>
     <div class="field">
-      <input
-        type="text"
-        name="shop_name"
-        id="shop-name-field"
-        value="<%=@transaction.shop.shop_name%>"
-      />
+      <select name="shop_id" id="shop_selection">
+        <% @shops.each do |shop| %>
+        <option value= <%=shop.id%>> <%=shop.shop_name%></option>
+        <% end %>
+      </select>
     </div>
   </div>
 
-  <button class="big-button button">Update Transaction</button>
+  <button class="big-button button">Update</button>
 </form>
 </div>

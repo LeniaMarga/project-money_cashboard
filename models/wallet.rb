@@ -5,13 +5,13 @@ require_relative('shop')
 
 class Wallet
 
-  attr_accessor :transaction, :category, :shop
+  attr_accessor :budget
 
   def initialize(options)
     @transaction= options['transaction']
     @category = options['category']
     @shop = options['shop']
-    @budjet = 300
+    @budget = 500
   end
 
 
@@ -46,12 +46,6 @@ class Wallet
       end
     end
     return sum
-  end
-
-
-  def total_amount_per_date
-
-
   end
 
 

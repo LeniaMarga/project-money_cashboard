@@ -66,6 +66,11 @@ class Transaction
       SqlRunner.run( sql, values )
     end
 
+    def self.delete()
+      sql = "DELETE FROM transactions"
+      SqlRunner.run( sql)
+    end
+
     def self.all()
       sql = "SELECT * FROM transactions"
       values = []
@@ -128,11 +133,19 @@ class Transaction
       return total["sum"]
     end
 
-    def reduce_budget(budget)
-      if @price <= budget
-         budget -= @price
+    def self.total_per_date(date_input)
+      sql = "SELECT SUM(price) FROM transactions WHERE date_input = $1"
+      values = [date_input]
+      sum = SqlRunner.run(sql, values)
+      total = sum.first
+      return total["sum"]
+    end
+
+    def reduce_budget()
+      if @price <= wallet.budget
+         wallet.budget -= @price
       end
-      return budget
+      return wallet.budget
     end
 
 end
