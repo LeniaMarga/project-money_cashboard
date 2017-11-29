@@ -1,0 +1,9 @@
+<div class= "introduction">
+<h1></h1>
+<% @categories.each do |category| %>
+  <div class="transaction-list">
+    <p>Category: <%= category.tag_name %> , sum: <%= @sum %>, limit: <%= category.amount_limit %></p>
+    <a class="body-link" href="/categories/<%= category.id %>">Edit</a>
+  </div>
+<% end %>
+</div>

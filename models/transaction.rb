@@ -18,7 +18,7 @@ class Transaction
   end
 
   def print_tag()
-    return "#{@title}, #{@price}, #{@date_input}"
+    return "#{@title}    -      price:#{@price}£    -   purchased on #{@date_input}"
   end
 
 
@@ -113,19 +113,26 @@ class Transaction
       return result
     end
 
-    def self.total_spent
+    def self.total
       sql = "SELECT SUM(price) FROM transactions"
       sum = SqlRunner.run(sql)
       total = sum.first
       return total["sum"]
     end
 
-    def self.total_spent_per_category(category_id)
+    def self.total_per_category(category_id)
       sql = "SELECT SUM(price) FROM transactions WHERE id = $1"
       values = [category_id]
       sum = SqlRunner.run(sql, values)
       total = sum.first
       return total["sum"]
+    end
+
+    def reduce_budget(budget)
+      if @price <= budget
+         budget -= @price
+      end
+      return budget
     end
 
 end

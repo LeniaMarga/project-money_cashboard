@@ -1,0 +1,33 @@
+<div class="introduction">
+  <h1></h1>
+  <h3>sum<h3>
+<%= @sum %>
+<br>
+<hr>
+<h3>transactions</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Price</th>
+      <th>Date</th>
+      <th>Category</th>
+      <th>Shop</th>
+      <th>Edit</th>
+    </tr>
+  </thead>
+  <br>
+<% @transactions.each do |transaction| %>
+  <div class="transaction-list">
+    <tr>
+    <td> <%= transaction.title %></td>
+    <td> <%= transaction.price %></td>
+    <td> <%= transaction.date_input %></td>
+    <td> <%= transaction.category.tag_name %></td>
+    <td> <%= transaction.shop.shop_name %> </td>
+    <td><a class="body-link" href="/transactions/<%= transaction.id %>">Edit</a></td>
+    </tr>
+  </div>
+<% end %>
+</table>
+</div>

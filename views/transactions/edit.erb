@@ -1,3 +1,5 @@
+<div class="introduction">
+  <h1></h1>
 <form method="post" action="/transactions/<%= @transaction.id%>">
   <input type="hidden" name="_method" value="put">
 
@@ -13,7 +15,7 @@
    </div>
   </div>
 
-  <div class="field-group">å
+  <div class="field-group">
     <label for="price-field" class="label">Price:</label>
     <div class="field">
       <input
@@ -61,3 +63,4 @@
 
   <button class="big-button button">Update Transaction</button>
 </form>
+</div>

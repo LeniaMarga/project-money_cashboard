@@ -5,13 +5,13 @@ require_relative('shop')
 
 class Wallet
 
-  attr_accessor :transaction, :category, :shop, :budjet
+  attr_accessor :transaction, :category, :shop
 
   def initialize(options)
     @transaction= options['transaction']
     @category = options['category']
     @shop = options['shop']
-    @budjet = options['budjet']
+    @budjet = 300
   end
 
 
@@ -30,7 +30,6 @@ class Wallet
     end
     return sum
   end
-
 
   def reduce_budget(transaction, budget)
     if transaction.price <= budget

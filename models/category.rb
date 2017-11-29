@@ -36,12 +36,28 @@ class Category
     return result
   end
 
+  def self.find (id)
+    sql = "SELECT * FROM categories WHERE id = $1"
+    values = [id]
+    category = SqlRunner.run( sql, values )
+    result = Category.new( category.first )
+    return result
+  end
+
   def self.find_by_name (tag_name)
     sql = "SELECT * FROM categories WHERE tag_name = $1"
     values = [tag_name]
     category = SqlRunner.run( sql, values )
-    result = category.map { |category| Category.new( category ) }
+    result = Category.new( category.first )
     return result
+  end
+
+  def self.total_sum
+    sql = "SELECT SUM(price) FROM transactions WHERE transactions.category_id = $1"
+    values = [@id]
+    sum = SqlRunner.run( sql, values )
+    result = sum.first
+    return result["sum"]
   end
 
   def self.map_items(category_data)# just not to repeat the .map in every method

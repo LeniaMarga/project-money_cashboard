@@ -1,0 +1,15 @@
+<div class="introduction">
+<h1></h1>
+<h3>transaction no <%=@transaction.id%> : </h3>
+<h3><a class="body-link" href="/transactions/<%=@category%>">category <%= @transaction.category.tag_name %> </a></h3>
+<br>
+<p><%= @transaction.print_tag %></p>
+<br>
+<p> purchased at <%= @transaction.shop.shop_name %>, <%=@transaction.shop.location%> </p>
+<a class="body-link" href="/transactions/<%= @transaction.id %>/edit">
+  <button class="big-button button">Update</button></a>
+<form method="post" action="/transactions/<%= @transaction.id %>">
+  <input type="hidden" name="_method" value="delete">
+  <button class="big-button button">Delete</button>
+</form>
+</div>

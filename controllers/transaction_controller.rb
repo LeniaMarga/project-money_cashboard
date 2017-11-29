@@ -9,18 +9,19 @@ require_relative( '../models/shop' )
 
 get '/transactions' do # index
   @transactions = Transaction.all()
-  erb( :index )
+  @sum = Transaction.total()
+  erb( :"transactions/index" )
 end
 
 get '/transactions/new' do # new  ----it calls the post (create)
   @categories = Category.all
   @shop = Shop.all
-  erb( :new )
+  erb( :"transactions/new" )
 end
 
 get '/transactions/:id' do # show  ---it calls the delete
   @transaction = Transaction.find( params[:id] )
-  erb( :show )
+  erb( :"transactions/show" )
 end
 
 post '/transactions' do # create
@@ -29,12 +30,11 @@ post '/transactions' do # create
   redirect to "/transactions"
 end
 
-
 get '/transactions/:id/edit' do # edit  calls the put(update)
   @transaction = Transaction.find( params[:id] )
   @categories = Category.all
   @shop = Shop.all
-  erb( :edit )
+  erb( :"transactions/edit" )
 end
 
 put '/transactions/:id' do # update
@@ -45,8 +45,30 @@ end
 delete '/transactions/:id' do # delete
   transaction = Transaction.find( params[:id] )
   transaction.delete()
-  redirect to '/transactions'
+  erb( :"transactions/delete" )
+  # redirect to '/transactions'
 end
+
+get '/transactions/:category' do # show  ---it calls the delete
+  @transaction = Transaction.all
+  @category =  @transaction.category(params[:id])
+  erb( :"transactions/category" )
+end
+
+get '/transactions/category/:id' do # show  ---it calls the delete
+  @transaction = Transaction.all
+  @category =  Category.find( params[:id] )
+  @sum = Transaction.total_per_category(@category.id)
+  erb( :"transactions/category/id" )
+end
+
+get '/transactions/budget' do # show  ---it calls the delete
+  @transaction = Transaction.all
+  @category =  Category.find( params[:id] )
+  @sum = Transaction.total_per_category(@category.id)
+  erb( :"transactions/category" )
+end
+
 #
 #
 # binding.pry

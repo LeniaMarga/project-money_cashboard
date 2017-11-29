@@ -32,6 +32,28 @@ class Shop
     @id = shops_data.first()['id'].to_i
   end
 
+  def update()
+    sql = "UPDATE shops
+    SET
+    (
+      shop_name,
+      location
+      ) =
+      (
+        $1, $2
+      )
+      WHERE id = $3"
+      values = [@shop_name, @location, @id]
+      SqlRunner.run( sql, values )
+    end
+
+    def delete()
+      sql = "DELETE FROM shops
+      WHERE id = $1"
+      values = [@id]
+      SqlRunner.run( sql, values )
+    end
+
   def self.all
     sql = "SELECT * FROM shops"
     values = []
@@ -45,6 +67,15 @@ class Shop
     values = [shop_name]
     shop = SqlRunner.run( sql, values )
     result = shop.map { |shop| Shop.new( shop ) }
+    return result
+  end
+
+  def self.find( id )
+    sql = "SELECT * FROM shops
+    WHERE id = $1"
+    values = [id]
+    shop = SqlRunner.run( sql, values )
+    result = Transaction.new( shop.first )
     return result
   end
 
