@@ -3,7 +3,7 @@ CodeClan - Solo Project 1, Programming & Web Fundamentals
 
 Money Cashboard - MoCa
 
-Introduction
+INTRODUCTION
 
 This was the first of four projects during my course at CodeClan. The project lasted for one week (10/03/2017 - 01/12/2017), utilising the following technologies and design patterns:
 
@@ -34,17 +34,44 @@ Extensions:
 - Show a warning when the total expenditure in each tag is over a user-defined budget.
 - Search and display the list of transactions by date
 
+
+
+HOW TO
+
+Preparation:
+To run this app you will need to install:
+-Atom (or equivalent package) to store the code.
+-PostgreSQL (to create and run the database): Download at https://www.postgresql.org and follow the instructions to install
+-Sinatra DLS to run the web application: Download at http://sinatrarb.com and
+follow the instructions to install
+
+Steps:
+-Download all folders from the github repository
+-Run 'create db money_cashboard' in the terminal
+-Go to db folder in the terminal.
+-While in db folder, run 'psql -d money_cashboard -f money_cashboard.sql' in the terminal
+-Still in db, run 'ruby seeds.rb' in the terminal
+-Go one directory up from db folder.
+-While in money_cashboard folder, run 'ruby contoller.rb' in the terminal
+-Go to Chrome and type: localhost:(your host)/
+Enjoy
+
+
+PERSONAL NOTE
+
 In creating this web app my intention was to consolidate and utilise as much of the information that I have learned thus far as possible, while adding on knowledge on UX and design patterns. Money Cashboard has all of the functionality specified in the brief, as well as multiple other features; creating a fully-featured product with a professional feel and clean interface.
 
 While planning the project I particularly focused on applying the principle of single responsibility both in back-end(Ruby Classes and Methods) and front-end(Controllers, Views), targeting to resolve functionality in all levels and provide a clean and consistent product. I feel that I achieved my goals and created a simple but slick looking web application with enough functionality to benefit the user, providing mild user flows to help them to achieve their budgeting objectives.
 
 Moving Forward, I would like to add the following functionality in future versions:
-Further chronological transaction analysis - between given dates, previous 7 days, previous month, per month etc.
-Income MVC collection - input future or past incoming transactions and balance those against transactions and budgets.
-Pie-charts, graphics and other forms of data display.
-Multiple search options: per category, per date, per shop, and/or combined fields
-Add locations - google map api and be able to show shops
-Develop vibrant user notifications
-Create social block for users: pictures and commends
+-Further chronological transaction analysis - display analyse results between given dates,  
+previous 7 days, previous month, per month etc.
+-Connect with bank account
+-Provide multiple currency options
+-Pie-charts, graphics and other forms of data display.
+-Multiple search options: per category, per date, per shop, and/or combined fields
+-Add locations of shops- google map api
+-Develop vibrant user notifications
+-Create social block for users: pictures and commends
 
 More ideas developed in my UX brief in the same repository
