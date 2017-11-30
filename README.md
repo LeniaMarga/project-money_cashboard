@@ -59,7 +59,7 @@ Using the terminal, do the following steps:
 - Go one directory up from db folder.
 - While in money_cashboard folder, run 'ruby contoller.rb'
 - Go to Chrome and type: localhost:(your host)/
-Enjoy
+- Enjoy
 
 
 PERSONAL NOTE
