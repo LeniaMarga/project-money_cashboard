@@ -40,19 +40,22 @@ HOW TO
 
 Preparation:
 To run this app you will need to install:
-- Atom (or equivalent package) to store the code.
-- PostgreSQL (to create and run the database): Download at https://www.postgresql.org and follow the instructions to install
+- Atom (or equivalent) to store the code.
+- Install PG gem (Ruby interface to PostgreSQL) : Download at https://rubygems.org/gems/pg/versions/0.18.4
+- Install the pry-beybug (code - testing): https://rubygems.org/gems/pry-byebug/versions/3.3.0
+- PostgreSQL (to create and run the database in SQL): Download at https://www.postgresql.org and follow the instructions to install
 - Sinatra DLS to run the web application: Download at http://sinatrarb.com and
 follow the instructions to install
 
-Steps:
-- Download all folders from the github repository
-- Run 'create db money_cashboard' in the terminal
-- Go to db folder in the terminal.
-- While in db folder, run 'psql -d money_cashboard -f money_cashboard.sql' in the terminal
-- Still in db, run 'ruby seeds.rb' in the terminal
+After installing pre-requisites:
+- Use the terminal to download all folders from the github repository and do the following steps:
+- Go to money_cashboard_final folder
+- Run 'create db money_cashboard'
+- Go to db folder
+- While in db folder, run 'psql -d money_cashboard -f money_cashboard.sql'
+- Still in db, run 'ruby seeds.rb'
 - Go one directory up from db folder.
-- While in money_cashboard folder, run 'ruby contoller.rb' in the terminal
+- While in money_cashboard folder, run 'ruby contoller.rb' 
 - Go to Chrome and type: localhost:(your host)/
 Enjoy
 
