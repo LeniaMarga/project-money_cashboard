@@ -40,20 +40,20 @@ HOW TO
 
 Preparation:
 To run this app you will need to install:
--Atom (or equivalent package) to store the code.
--PostgreSQL (to create and run the database): Download at https://www.postgresql.org and follow the instructions to install
--Sinatra DLS to run the web application: Download at http://sinatrarb.com and
+- Atom (or equivalent package) to store the code.
+- PostgreSQL (to create and run the database): Download at https://www.postgresql.org and follow the instructions to install
+- Sinatra DLS to run the web application: Download at http://sinatrarb.com and
 follow the instructions to install
 
 Steps:
--Download all folders from the github repository
--Run 'create db money_cashboard' in the terminal
--Go to db folder in the terminal.
--While in db folder, run 'psql -d money_cashboard -f money_cashboard.sql' in the terminal
--Still in db, run 'ruby seeds.rb' in the terminal
--Go one directory up from db folder.
--While in money_cashboard folder, run 'ruby contoller.rb' in the terminal
--Go to Chrome and type: localhost:(your host)/
+- Download all folders from the github repository
+- Run 'create db money_cashboard' in the terminal
+- Go to db folder in the terminal.
+- While in db folder, run 'psql -d money_cashboard -f money_cashboard.sql' in the terminal
+- Still in db, run 'ruby seeds.rb' in the terminal
+- Go one directory up from db folder.
+- While in money_cashboard folder, run 'ruby contoller.rb' in the terminal
+- Go to Chrome and type: localhost:(your host)/
 Enjoy
 
 
