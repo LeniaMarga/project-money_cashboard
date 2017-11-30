@@ -1,0 +1,14 @@
+
+<div class="introduction">
+  <h1></h1>
+  <h3>purchases<h3>
+  <hr>
+  <div class="transaction-list">
+<% @transactions.each do |transaction| %>
+    <tr>
+    <br>
+    <td> <%= transaction.print_tag %></td>
+    <br>
+    </tr>
+<% end %>
+</div>

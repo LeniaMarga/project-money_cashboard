@@ -13,6 +13,11 @@ get '/transactions' do # index
   erb( :"transactions/index" )
 end
 
+get '/transactions/search' do # show  ---it calls the delete
+  @transactions = Transaction.search_date(params[:date_input])
+  erb( :"transactions/search_results" )
+end
+
 get '/transactions/new' do # new  ----it calls the post (create)
   @categories = Category.all
   @shops = Shop.all
@@ -60,12 +65,9 @@ get '/transactions/shop/:id' do # show  ---it calls the delete
   erb( :"transactions/shop" )
 end
 
-# get '/transactions/date' do # show  ---it calls the delete
-#   @shop= Shop.find(params[:id])
-#   erb( :"transactions/shop" )
-# end
+
+
+
 
 #
-#
-# binding.pry
 # nil

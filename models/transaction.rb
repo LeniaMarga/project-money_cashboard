@@ -133,20 +133,28 @@ class Transaction
       return total["sum"]
     end
 
-    def self.search_date(date_input1,date_input2 )
-      sql = "SELECT date_input FROM transactions WHERE date_input BETWEEN $1 AND $2"
+    def self.search_date(date_input)
+      sql = "SELECT * FROM transactions WHERE date_input = $1"
+      values = [date_input]
+      transactions = SqlRunner.run(sql, values)
+      result = transactions.map { |transaction| Transaction.new( transaction ) }
+      return result
+    end
+
+    def self.search_between_dates(date_input1,date_input2 )
+      sql = "SELECT * FROM transactions WHERE date_input BETWEEN $1 AND $2"
       values = ["%#{date_input1 }%","%#{date_input2 }%"]
-      sum = SqlRunner.run(sql, values)
-      total = sum.first
-      return total["sum"]
+      transactions = SqlRunner.run(sql, values)
+      result = transactions.map { |transaction| Transaction.new( transaction ) }
+      return result
     end
 
     def self.search_month(month)
-      sql = "SELECT MONTH(transactions.date_input),* FROM transactions WHERE MONTH(transactions.date_input) =$1"
+      sql = "SELECT * FROM transactions WHERE MONTH(transactions.date_input) =$1"
       values = [month]
-      sum = SqlRunner.run(sql, values)
-      total = sum.first
-      return total["sum"]
+      transactions = SqlRunner.run(sql, values)
+      result = transactions.map { |transaction| Transaction.new( transaction ) }
+      return result
     end
 
 end
