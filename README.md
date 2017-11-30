@@ -7,14 +7,14 @@ INTRODUCTION
 
 This was the first of four projects during my course at CodeClan. The project lasted for one week (10/03/2017 - 01/12/2017), utilising the following technologies and design patterns:
 
--Ruby (with Sinatra web framework/DSL)
--SQL (with PostgreSQL object-relational database management system)
--HTML/CSS
--Object oriented programming (OOP)
--Test driven development (TDD)
--Databases with CRUD actions
--Representational state transfer architecture (RESTful development/MVC)
--Model-view-controller architecture (MVC)
+- Ruby (with Sinatra web framework/DSL)
+- SQL (with PostgreSQL object-relational database management system)
+- HTML/CSS
+- Object oriented programming (OOP)
+- Test driven development (TDD)
+- Databases with CRUD actions
+- Representational state transfer architecture (RESTful development/MVC)
+- Model-view-controller architecture (MVC)
 
 The project brief was to create a budgeting app used for tracking and categorising personal expenses.
 Main features are the ability to create and display Transactions ( which should include a shop name, e.g. Tesco, and a value ) with associated Categories (e.g. 'food', 'clothes') and track and display the total sum of expenses.
@@ -69,14 +69,14 @@ In creating this web app my intention was to consolidate and utilise as much of 
 While planning the project I particularly focused on applying the principle of single responsibility both in back-end(Ruby Classes and Methods) and front-end(Controllers, Views), targeting to resolve functionality in all levels and provide a clean and consistent product. I feel that I achieved my goals and created a simple but slick looking web application with enough functionality to benefit the user, providing mild user flows to help them to achieve their budgeting objectives.
 
 Moving Forward, I would like to add the following functionality in future versions:
--Further chronological transaction analysis - display analyse results between given dates,  
+- Further chronological transaction analysis - display analyse results between given dates,  
 previous 7 days, previous month, per month etc.
--Connect with bank account
--Provide multiple currency options
--Pie-charts, graphics and other forms of data display.
--Multiple search options: per category, per date, per shop, and/or combined fields
--Add locations of shops- google map api
--Develop vibrant user notifications
--Create social block for users: pictures and commends
+- Connect with bank account
+- Provide multiple currency options
+- Pie-charts, graphics and other forms of data display.
+- Multiple search options: per category, per date, per shop, and/or combined fields
+- Add locations of shops- google map api
+- Develop vibrant user notifications
+- Create social block for users: pictures and commends
 
 More ideas developed in my UX brief in the same repository
