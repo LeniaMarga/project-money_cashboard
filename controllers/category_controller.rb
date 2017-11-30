@@ -6,21 +6,17 @@ require_relative( '../models/transaction' )
 require_relative( '../models/category' )
 require_relative( '../models/shop' )
 
-get '/categories' do # index
+get '/categories' do
   @categories = Category.all
   erb( :"categories/index" )
 end
 
-get '/categories/new' do # new  ----it calls the post (create)
+get '/categories/new' do
   erb( :"categories/new" )
 end
 
-post '/categories' do # create
+post '/categories' do 
   @category = Category.new( params )
   @category.save()
   redirect to "/categories"
 end
-
-
-# binding.pry
-# nil

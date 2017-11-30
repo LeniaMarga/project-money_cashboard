@@ -90,6 +90,4 @@ class Shop
     return result
   end
 
-
-
 end

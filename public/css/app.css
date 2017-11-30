@@ -6,11 +6,6 @@ html {
   box-sizing: inherit;
 }
 
-/* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -57,8 +52,7 @@ table {
 
 table, th, td {
   border-collapse: collapse;
-    /*border: 1px solid lightgrey;*/
-    border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
 }
 
 table {
@@ -266,7 +260,6 @@ input[type="submit"]{
 }
 
 .introduction{
-  /*background-image: url('../images/pig.jpg');*/
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -483,17 +476,13 @@ The buttons
   color: black;
   border: solid 1px #0076a3;
   background: #fff;
-  /*background: -webkit-gradient(linear, left top, left bottom, from(#00adee), to(#0078a5));
-  background: -moz-linear-gradient(top,  #00adee,  #0078a5);*/
-  /*border-top-right-radius: 5px 5px;
-  border-bottom-right-radius: 5px 5px;*/
 }
+
 .tfbutton:hover {
   text-decoration: none;
   background: #AE2305;
-  /*background: -webkit-gradient(linear, left top, left bottom, from(#0095cc), to(#00678e));
-  background: -moz-linear-gradient(top,  #0095cc,  #00678e);*/
 }
+
 /* Fixes submit button height problem in Firefox */
 .tfbutton::-moz-focus-inner {
   border: 0;

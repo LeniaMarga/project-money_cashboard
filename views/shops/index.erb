@@ -1,12 +1,10 @@
 <div class= "introduction">
-<h1></h1>
+<h1>&nbsp</h1>
 <% @shops.each do |shop| %>
   <div class="transaction-list">
     <h3> <a class="body-link" href="/transactions/shop/<%=shop.id%>"><%= shop.shop_name %></a></h3>
     <br>
     <p> <%= shop.location %></p>
-
-    <!-- <a class="body-link" href="/categories/budget">Edit</a> -->
     <br>
   </div>
 <% end %>

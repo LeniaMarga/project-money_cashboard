@@ -62,7 +62,15 @@ class Category
     values = [@id]
     sum = SqlRunner.run( sql, values )
     result = sum.first
-    return result["sum"].to_i
+    return result["sum"].to_f
+  end
+
+  def check_total
+    if total_sum() == nil
+      return 0
+    else
+      return total_sum()
+    end
   end
 
   def self.map_items(category_data)# just not to repeat the .map in every method

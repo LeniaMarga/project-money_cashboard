@@ -1,7 +1,7 @@
 require_relative('../db/sql_runner')
 require_relative('category')
 require_relative('shop')
-# require_relative('wallet')
+
 
 class Transaction
 
@@ -11,7 +11,7 @@ class Transaction
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @title = options['title']
-    @date_input = options["date_input"]                  #to_date?
+    @date_input = options["date_input"]
     @price = options["price"].to_f
     @category_id = options["category_id"]
     @shop_id = options["shop_id"]
@@ -141,20 +141,5 @@ class Transaction
       return result
     end
 
-    def self.search_between_dates(date_input1,date_input2 )
-      sql = "SELECT * FROM transactions WHERE date_input BETWEEN $1 AND $2"
-      values = ["%#{date_input1 }%","%#{date_input2 }%"]
-      transactions = SqlRunner.run(sql, values)
-      result = transactions.map { |transaction| Transaction.new( transaction ) }
-      return result
-    end
-
-    def self.search_month(month)
-      sql = "SELECT * FROM transactions WHERE MONTH(transactions.date_input) =$1"
-      values = [month]
-      transactions = SqlRunner.run(sql, values)
-      result = transactions.map { |transaction| Transaction.new( transaction ) }
-      return result
-    end
 
 end
