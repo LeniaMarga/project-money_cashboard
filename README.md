@@ -48,14 +48,16 @@ To run this app you will need to install:
 follow the instructions to install
 
 After installing pre-requisites:
-- Use the terminal to download all folders from the github repository and do the following steps:
+
+Use the terminal to download all folders from the github repository.
+Using the terminal, do the following steps:
 - Go to money_cashboard_final folder
 - Run 'create db money_cashboard'
 - Go to db folder
 - While in db folder, run 'psql -d money_cashboard -f money_cashboard.sql'
 - Still in db, run 'ruby seeds.rb'
 - Go one directory up from db folder.
-- While in money_cashboard folder, run 'ruby contoller.rb' 
+- While in money_cashboard folder, run 'ruby contoller.rb'
 - Go to Chrome and type: localhost:(your host)/
 Enjoy
 
