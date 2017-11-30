@@ -60,7 +60,10 @@ get '/transactions/shop/:id' do # show  ---it calls the delete
   erb( :"transactions/shop" )
 end
 
-
+# get '/transactions/date' do # show  ---it calls the delete
+#   @shop= Shop.find(params[:id])
+#   erb( :"transactions/shop" )
+# end
 
 #
 #

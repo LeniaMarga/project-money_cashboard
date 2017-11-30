@@ -1,66 +1,33 @@
-<form method="post" action="/transactions">
-
-  <div class="field-group">
-    <label for="title-field" class="label">Transaction Title:</label>
-    <div class="field">
-      <input
-        type="text"
-        name="title"
-        id="title-field"
-        placeholder="transaction title"
-        required
-      />
-   </div>
-  </div>
-
-  <div class="field-group">
-    <label for="price-field" class="label">Price:</label>
-    <div class="field">
-      <input
-        type="number"
-        name="price"
-        id="price-field"
-        placeholder="price"
-        required
-      />
-    </div>
-  </div>
-
-  <div class="field-group">
-    <label for="date-input-field" class="label">Date:</label>
-    <div class="field">
-      <input
-        type="date"
-        name="date_input"
-        id="date-input-field"
-        placeholder="DD/MM/YY"
-        required
-      />
-    </div>
-  </div>
-
-  <div class= "field-group">
-    <label for= "category-selection" class="label">Category:</label>
-    <div class="field">
-      <select name="category_id" id="category_selection">
-        <% @categories.each do |category| %>
-        <option value= <%=category.id%>> <%=category.tag_name%></option>
-        <% end %>
-      </select>
-    </div>
-
-  <div class="field-group">
-    <label for="shop-name-field" class="label">Shop:</label>
-    <div class="field">
-      <input
-        type="text"
-        name="shop_name"
-        id="shop-name-field"
-        placeholder="shop name"
-        required
-      />
-    </div>
-  </div>
-
-  <button class="big-button button">Save Transaction</button>
-</form>
+<div class="introduction">
+<h1></h1>
+<h3>new category</h3>
+<br>
+<div class="box">
+<form method="post" action="/categories">
+  <ul class="flex-outer">
+    <li>
+     <label for="tag_name" class="label">Category name:</label>
+       <input
+         type="text"
+         name="tag_name"
+         id="tag_name"
+         placeholder="category name"
+         required
+       />
+    </li>
+    <li>
+     <label for="amount_limit" class="label">Limit:</label>
+       <input
+         type="number"
+         name="amount_limit"
+         id="amount_limit"
+         placeholder="limit £"
+         required
+       />
+    </li>
+    <li>
+   <button class="big-button button">Save</button>
+ </li>
+ </ul>
+ </form>
+ </div>

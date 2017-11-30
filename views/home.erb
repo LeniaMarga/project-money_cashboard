@@ -4,8 +4,10 @@
   <h3>my expenses: <%= @sum %></h3>
   <hr>
   <h3>my budget: <%= @@budget %></h3>
-  <p><% if @sum >= @@budget %>
-     <p class ="red"> note! you are over budget!</p>
+  <% budget = @@budget %>
+  <% budget -= @sum %>
+  <p><% if @sum >= @@budget %></p>
+     <p id ="red"> you are <%= budget %> £ over budget</p>
      <%end%>
   <br>
   <ul>

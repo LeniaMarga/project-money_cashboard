@@ -18,7 +18,7 @@ class Transaction
   end
 
   def print_tag()
-    return "#{@title}    -      price:#{@price}£    -   purchased on #{@date_input}"
+    return "title: #{@title}    -      price: #{@price}£    -   date: #{@date_input}"
   end
 
 
@@ -133,9 +133,17 @@ class Transaction
       return total["sum"]
     end
 
-    def self.search_per_date(date_input)
-      sql = "SELECT SUM(price) FROM transactions WHERE date_input = $1"
-      values = ["%#{date_input }%"]
+    def self.search_date(date_input1,date_input2 )
+      sql = "SELECT date_input FROM transactions WHERE date_input BETWEEN $1 AND $2"
+      values = ["%#{date_input1 }%","%#{date_input2 }%"]
+      sum = SqlRunner.run(sql, values)
+      total = sum.first
+      return total["sum"]
+    end
+
+    def self.search_month(month)
+      sql = "SELECT MONTH(transactions.date_input),* FROM transactions WHERE MONTH(transactions.date_input) =$1"
+      values = [month]
       sum = SqlRunner.run(sql, values)
       total = sum.first
       return total["sum"]

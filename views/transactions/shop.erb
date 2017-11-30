@@ -4,6 +4,6 @@
   <%@budget = 0%>
 <h3>Sum per shop </h3>
 <br>
-<h3><%=@shop.shop_name %>,
+<h3><%=@shop.shop_name %>, <%=@shop.location %>:
 <%@budget += @shop.total_shop_sum.to_i%>
 <%= @budget%> £</h3>

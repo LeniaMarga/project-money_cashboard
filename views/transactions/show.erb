@@ -1,11 +1,17 @@
 <div class="introduction">
 <h1></h1>
-<h3>transaction no <%=@transaction.id%> : </h3>
+<p>transaction no <%=@transaction.id%> </p>
+<br>
 <h3><a class="body-link" href="/transactions/category/<%=@transaction.category_id%>">category <%= @transaction.category.tag_name %> </a></h3>
+<hr>
+<h3><%= @transaction.title %> - <%= @transaction.price %> £</h3>
 <br>
-<p><%= @transaction.print_tag %></p>
+<h3>
+<!-- <a class="body-link" href="/transactions/date/">  -->
+<%= @transaction.date_input%></h3>
 <br>
-<p><a class="body-link" href="/transactions/shop/<%=@transaction.shop_id%>"><%= @transaction.shop.shop_name %>, <%=@transaction.shop.location%> </p>
+<h3><a class="body-link" href="/transactions/shop/<%=@transaction.shop_id%>">
+<%= @transaction.shop.shop_name %>, <%=@transaction.shop.location%> </h3>
 <a class="body-link" href="/transactions/<%= @transaction.id %>/edit">
   <button class="big-button button">Update</button></a>
 <form method="post" action="/transactions/<%= @transaction.id %>">
